@@ -14,6 +14,18 @@ public class EmpWedge {
         }
         else
             System.out.println("Employee is Absent");
+
+        //UC2
+        int wagePerHour = 20;
+        int fullDayHour = 8;
+        int dailyWage;
+
+        dailyWage = present * wagePerHour * fullDayHour;
+        if (present == 1)
+            System.out.println("Employee Wage Per Day = "+dailyWage);
+        else
+            System.out.println("Employee Wage Per Day = "+dailyWage);
+
     }
 
 }
