@@ -9,22 +9,30 @@ public class EmpWedge {
         //UC1
         Random random = new Random();
         int present = random.nextInt(2);
-        if (present == 1) {
+        if (present == 0) {
             System.out.println("Employee is Present");
         }
-        else
+        else if (present == 1)
             System.out.println("Employee is Absent");
+
+        else
+        System.out.println("Employee is PART-TIME");
 
         //UC2
         int wagePerHour = 20;
         int fullDayHour = 8;
         int dailyWage;
+        int partTimeHour = 4;
 
         dailyWage = present * wagePerHour * fullDayHour;
-        if (present == 1)
+        int partTimeWage = wagePerHour * partTimeHour;
+        
+        if (present == 0)
+            System.out.println("Employee Wage Per Day = "+dailyWage);
+        else if(present == 1)
             System.out.println("Employee Wage Per Day = "+dailyWage);
         else
-            System.out.println("Employee Wage Per Day = "+dailyWage);
+        System.out.println("Employee Part Time Wage  = "+partTimeWage);
 
     }
 
