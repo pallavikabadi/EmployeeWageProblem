@@ -15,4 +15,5 @@ public class EmpWedge {
         else
             System.out.println("Employee is Absent");
     }
+
 }
