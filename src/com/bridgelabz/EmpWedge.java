@@ -37,8 +37,11 @@ public class EmpWedge {
     */
 
         int wagePerHour = 20;
+        int workingDays = 20;  
         int dailyWage;
         int workingHour;
+        int monthlyWage;
+        
         Random random = new Random();
         int present = random.nextInt(3);
         switch (present) {
@@ -58,6 +61,8 @@ public class EmpWedge {
                 break;
         }
         dailyWage = workingHour * wagePerHour;
+        monthlyWage = dailyWage * workingDays;
         System.out.println("Employee Daily Wage = " +dailyWage);
+        System.out.println("Employee Monthly Wage = " +monthlyWage);
     }
 }
