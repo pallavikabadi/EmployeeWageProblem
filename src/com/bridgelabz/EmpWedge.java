@@ -62,7 +62,7 @@ public class EmpWedge {
         dailyWage = workingHour * wagePerHour;
         System.out.println("Employee Daily Wage = " +dailyWage);
     }*/
-    //UC7:
+    /*//UC7:-----------
     public void EmployeeWage() {
 
         int totalWage = 0;
@@ -102,9 +102,62 @@ public class EmpWedge {
     }
 
     public static void main(String[] args) {
-        System.out.println("Welcome To Employee Wage Computation Program ");
+        System.out.println("*** Welcome To Employee Wage Computation Program ***");
 
         EmpWedge empWedge=new EmpWedge();
         empWedge.EmployeeWage();
+    }*/
+    //UC8:---------
+        public void ComputeEmployeeWage(String companyName, int wagePerHour, int workingDays, int max_workingHours){
+
+            System.out.println("Name of the Company : " +companyName);
+            System.out.println("Company Wage per Hour : " +wagePerHour+ " $");
+            System.out.println("Company Working Days : " +workingDays+ " Days");
+            System.out.println("Company Maximum Working Hours : " +max_workingHours+ " Hrs");
+
+            int totalWage = 0;
+            int dailyWage;
+            int workingHour = 0;
+            int totalWorkingHour = 0;
+            int day = 1;
+
+        while (day <= workingDays && workingHour <= max_workingHours) {
+            Random random = new Random();
+            int present = random.nextInt(3);
+            System.out.println();
+            System.out.println("DAY => " + day + ";");
+            switch (present) {
+                case 0:
+                    System.out.println("Employee is ABSENT");
+                    workingHour = 0;
+                    break;
+                case 1:
+                    System.out.println("Employee is PRESENT");
+                    workingHour = 8;
+                    break;
+                default:
+                    System.out.println("Employee is PART-TIME");
+                    workingHour = 4;
+                    break;
+            }
+            day++;
+            dailyWage = workingHour * wagePerHour;
+            totalWage += dailyWage;
+            totalWorkingHour += workingHour;
+            System.out.println("Employee Working Hour Per Day = " + workingHour);
+            System.out.println("Employee Daily Wage = " + dailyWage);
+        }
+            System.out.println("Employee of " +companyName+ " Monthly Wage is " + totalWage+ " $ ");
+
+    }
+
+    public static void main(String[] args) {
+        System.out.println("*** Welcome To Employee Wage Computation Program ***");
+
+        EmpWedge empWedge=new EmpWedge();
+        empWedge.ComputeEmployeeWage("Tcs", 30, 24, 121);
+        empWedge.ComputeEmployeeWage("Infosys", 20, 22, 130);
+        empWedge.ComputeEmployeeWage("Mindtree", 50, 21, 160);
     }
 }
+
