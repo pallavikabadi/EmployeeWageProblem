@@ -148,7 +148,7 @@ public class EmpWedge {
             System.out.println("Employee Daily Wage = " + dailyWage);
         }
             System.out.println("Employee of " +companyName+ " Monthly Wage is " + totalWage+ " $ ");
-
+            System.out.println("______");
     }
 
     public static void main(String[] args) {
