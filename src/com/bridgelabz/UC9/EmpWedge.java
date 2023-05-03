@@ -1,6 +1,4 @@
-package com.bridgelabz;
-
-import java.util.Random;
+package com.bridgelabz.UC9;
 
 public class EmpWedge {
 
@@ -170,14 +168,14 @@ public class EmpWedge {
  /*
    Create class method to compute Employee wage And calling the object of Employee wage Builder in the main method
  */
-        EmpWageBuilder abb = new EmpWageBuilder("TCS",30,24,121);
-        System.out.println(abb);
-        abb.ComputeEmpWage();
-        EmpWageBuilder tcs = new EmpWageBuilder("Infoss",20,22,130);
+        EmpWageBuilder tcs = new EmpWageBuilder("TCS",30,24,121);
         System.out.println(tcs);
         tcs.ComputeEmpWage();
-        EmpWageBuilder infoPark = new EmpWageBuilder("INFO Mindtree",50,22,160);
-        System.out.println(infoPark);
-        infoPark.ComputeEmpWage();
+        EmpWageBuilder  infosys= new EmpWageBuilder("Infoss",20,22,130);
+        System.out.println(infosys);
+        infosys.ComputeEmpWage();
+        EmpWageBuilder mindtree = new EmpWageBuilder("INFO Mindtree",50,22,160);
+        System.out.println(mindtree);
+        mindtree.ComputeEmpWage();
     }
 }
