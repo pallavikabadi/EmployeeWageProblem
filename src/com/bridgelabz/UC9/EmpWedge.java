@@ -171,10 +171,10 @@ public class EmpWedge {
         EmpWageBuilder tcs = new EmpWageBuilder("TCS",30,24,121);
         System.out.println(tcs);
         tcs.ComputeEmpWage();
-        EmpWageBuilder  infosys= new EmpWageBuilder("Infoss",20,22,130);
+        EmpWageBuilder  infosys= new EmpWageBuilder("Infosys",20,22,130);
         System.out.println(infosys);
         infosys.ComputeEmpWage();
-        EmpWageBuilder mindtree = new EmpWageBuilder("INFO Mindtree",50,22,160);
+        EmpWageBuilder mindtree = new EmpWageBuilder("Mindtree",50,22,160);
         System.out.println(mindtree);
         mindtree.ComputeEmpWage();
     }
