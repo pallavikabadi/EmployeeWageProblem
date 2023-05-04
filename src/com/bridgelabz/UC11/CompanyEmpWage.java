@@ -2,7 +2,7 @@ package com.bridgelabz.UC11;
 
 import java.util.Random;
 
-public class ComputeEmpWage {
+public class CompanyEmpWage {
     public final String companyName;
     public int wagePerHour;
     public int workingDays;
@@ -10,7 +10,7 @@ public class ComputeEmpWage {
 
 
    // Generating Constructors
-    public ComputeEmpWage(String companyName, int wagePerHour, int workingDays, int max_workingHours) {
+    public CompanyEmpWage(String companyName, int wagePerHour, int workingDays, int max_workingHours) {
         this.companyName = companyName;
         this.wagePerHour = wagePerHour;
         this.workingDays = workingDays;
