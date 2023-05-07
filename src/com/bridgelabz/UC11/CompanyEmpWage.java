@@ -1,4 +1,4 @@
-package com.bridgelabz.UC11;
+package com.bridgelabz.UC14;
 
 import java.util.Random;
 
@@ -7,14 +7,18 @@ public class CompanyEmpWage {
     public int wagePerHour;
     public int workingDays;
     public int max_workingHours;
+    public int totalEmpWage;
 
 
-   // Generating Constructors
+
+    // Generating Constructors
     public CompanyEmpWage(String companyName, int wagePerHour, int workingDays, int max_workingHours) {
         this.companyName = companyName;
         this.wagePerHour = wagePerHour;
         this.workingDays = workingDays;
         this.max_workingHours = max_workingHours;
+        this.totalEmpWage = 0;
+
     }
 
     public int ComputeEmpWage() {
@@ -24,6 +28,8 @@ public class CompanyEmpWage {
         int workingHour = 0;
         int totalWorkingHour = 0;
         int day = 0;
+        //System.out.println("Employee Daily Wage");
+
         //computation
         while (workingHour <= max_workingHours && day < workingDays) {
 
@@ -48,6 +54,8 @@ public class CompanyEmpWage {
             dailyWage = workingHour * wagePerHour;
             totalWage += dailyWage;
             totalWorkingHour += workingHour;
+           // System.out.println("DAY"+day+" => "+dailyWage+" $");
+
         }
         return totalWage;
     }
@@ -59,5 +67,8 @@ public class CompanyEmpWage {
                 ", workingDays=" + workingDays +
                 ", max_workingHours=" + max_workingHours +
                 '}';
+    }
+    public void setTotalEmpWage(int totalEmpWage) {
+        this.totalEmpWage = totalEmpWage;
     }
 }
