@@ -1,28 +1,46 @@
-package com.bridgelabz.UC11;
 
-public class EmpWage {
-    public static CompanyEmpWage objectArray[] = new CompanyEmpWage[3];
-    public static void main(String[] args) {
+package com.bridgelabz.UC14;
 
-        System.out.println("Welcome To EMPLOYEE WAGE COMPUTATION PROGRAM ***");
-        System.out.println();
+import java.util.ArrayList;
+import java.util.HashMap;
 
-   //Create class method to compute Employee wage And calling the object of Employee wage Builder in the main method
+public class EmpWage implements EmployeeWage{
+    public static ArrayList<CompanyEmpWage> companyEmpWages = new ArrayList<CompanyEmpWage>();
+    public static HashMap<String, CompanyEmpWage> companyEmpWageHashMap = new HashMap<>();
 
-        objectArray[0] = new CompanyEmpWage("TCS",30,24,121);
-        int empWageTcs = objectArray[0].ComputeEmpWage();
-        System.out.println(objectArray[0]);
-        System.out.println("Employee of Tcs Monthly Wage is " + empWageTcs + " $ ");
-        System.out.println();
-        objectArray[1] = new CompanyEmpWage("Infosys",20,22,130);
-        int empWageInfosys = objectArray[1].ComputeEmpWage();
-        System.out.println(objectArray[1]);
-        System.out.println("Employee of Infosys Monthly Wage is " + empWageInfosys + " $ ");
-        System.out.println();
-        objectArray[2] = new CompanyEmpWage("Mindtree",50,22,160);
-        int empWageMindtree = objectArray[2].ComputeEmpWage();
-        System.out.println(objectArray[2]);
-        System.out.println("Employee of Middtree Wage is " + empWageMindtree+ " $ ");
+    @Override
+    public int ComputeEmpWage() {
+        for (int i=0; i<companyEmpWages.size(); i++) {
+            CompanyEmpWage companyEmpWage= companyEmpWages.get(i);
+            companyEmpWage.setTotalEmpWage(companyEmpWage.ComputeEmpWage());
+        }
+        return 0;
     }
 
+    @Override
+    public void addCompanyEmpWage(String companyName, int wagePerHour, int workingDays, int max_workingHours) {
+        CompanyEmpWage companyEmpWage = new CompanyEmpWage(companyName, wagePerHour, workingDays, max_workingHours);
+        companyEmpWages.add(companyEmpWage);
+        companyEmpWageHashMap.put(companyName,companyEmpWage);
+    }
+
+    @Override
+    public int getTotalWage(String company) {
+        return companyEmpWageHashMap.get(company).totalEmpWage;
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("Welcome To Employee Wage Computation Problem");
+        System.out.println();
+
+        //Create class method to compute Employee wage And calling the object of Employee wage Builder in the main method
+
+        EmpWage emp=new EmpWage();
+        emp.addCompanyEmpWage("TCS",30,24,121);
+        emp.addCompanyEmpWage("Infosys",20,22,130);
+        emp.addCompanyEmpWage("Mindtree",50,22,160);
+        emp.ComputeEmpWage();
+        System.out.println("Employee of TCS Total Monthly Wage = "+emp.getTotalWage("TCS")+" $");
+    }
 }
