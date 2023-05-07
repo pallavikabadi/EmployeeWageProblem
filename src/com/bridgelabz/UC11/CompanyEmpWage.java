@@ -48,6 +48,8 @@ public class CompanyEmpWage {
             dailyWage = workingHour * wagePerHour;
             totalWage += dailyWage;
             totalWorkingHour += workingHour;
+            System.out.println("DAY"+day+" => "+dailyWage+" $");
+
         }
         return totalWage;
     }
